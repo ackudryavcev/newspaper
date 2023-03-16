@@ -1,0 +1,14 @@
+.news-item {
+    width: 28%;
+    margin: 0 1%;
+    padding: 1%;
+}
+
+.news-item:nth-child(3n-1) {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.news-img {
+    width: 300px;
+}
