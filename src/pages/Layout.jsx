@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./Layout.css";
 import useSearch from "../hooks/useSearch";
+import Footer from "../components/Footer";
 
 function Layout() {
   const [inputValue, setInputValue] = useState("");
   const [handleChange, handleKeyDown] = useSearch(setInputValue);
+  const handleButtonClick = () => {
+    handleKeyDown({ key: "Enter" }, inputValue);
+  };
+
   return (
     <>
       <header className="header">
@@ -14,11 +19,20 @@ function Layout() {
             Magazine and newspaper with news around the world
           </h1>
           <menu className="over-menu">
-            <Link to={`/`} className="over-link">
-              Contacts
+            <Link to={`/category?q=programming`} className="over-link">
+              Programming
             </Link>
-            <Link to={`favorites`} className="over-link">
-              Private Policy
+            <Link to={`/category?q=world`} className="over-link">
+              World
+            </Link>
+            <Link to={`/category?q=politics`} className="over-link">
+              Politics
+            </Link>
+            <Link to={`/category?q=celebrity`} className="over-link">
+              Celebrity
+            </Link>
+            <Link to={`/category?q=funny`} className="over-link">
+              Funny
             </Link>
           </menu>
         </div>
@@ -30,7 +44,7 @@ function Layout() {
             Main
           </Link>
           <Link to={`favorites`} className="main-link">
-            Favorites
+            Favorite news
           </Link>
         </menu>
         <input
@@ -40,8 +54,12 @@ function Layout() {
           onChange={handleChange}
           value={inputValue}
         ></input>
+        <button className="main-search-button" onClick={handleButtonClick}>
+          Search
+        </button>
       </div>
       <Outlet />
+      <Footer />
     </>
   );
 }
