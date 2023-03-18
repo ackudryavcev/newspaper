@@ -1,0 +1,20 @@
+.news-block-title {
+    display: inline-block;
+    margin: 20px 0 10px 2%;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.2rem;
+    letter-spacing: 0.2rem;
+    color: black;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.news-block-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main {
+    min-height: 600px;
+}

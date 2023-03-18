@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import useCategories from "../hooks/useCategories";
 import { Link } from "react-router-dom";
 import "./Footer.css";
@@ -14,6 +15,9 @@ function Footer() {
       <div>
         <h4 className="footer-title">All Categories</h4>
       </div>
+      <a href="#" className="footer-link-up">
+        ⬆︎
+      </a>
       <div className="footer-links">
         {categories.length > 0 &&
           categories.map((category, index) => {

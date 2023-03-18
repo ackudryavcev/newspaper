@@ -54,9 +54,10 @@ function Layout() {
           onChange={handleChange}
           value={inputValue}
         ></input>
-        <button className="main-search-button" onClick={handleButtonClick}>
-          Search
-        </button>
+        <button
+          className="main-search-button"
+          onClick={handleButtonClick}
+        ></button>
       </div>
       <Outlet />
       <Footer />

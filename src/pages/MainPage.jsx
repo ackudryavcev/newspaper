@@ -1,15 +1,15 @@
 import useFetch from "../hooks/useFetch";
-import "./MainPage.css";
 import NewsBlock from "../components/NewsBlock";
 
 function MainPage() {
-  const [allNews, fetchError] = useFetch("", "");
+  const [allNews, fetchError, isLoading] = useFetch("", "");
   return (
     <NewsBlock
       title={`Latest news`}
       allNews={allNews}
       searchQuery=""
       fetchError={fetchError}
+      isLoading={isLoading}
     />
   );
 }

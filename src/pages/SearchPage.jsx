@@ -7,7 +7,7 @@ function SearchPage() {
   const queryParams = new URLSearchParams(location.search);
   const searchQuery = queryParams.get("q");
 
-  const [allNews, fetchError] = useFetch(searchQuery, "");
+  const [allNews, fetchError, isLoading] = useFetch(searchQuery, "");
 
   return (
     <NewsBlock
@@ -15,6 +15,7 @@ function SearchPage() {
       allNews={allNews}
       searchQuery={searchQuery}
       fetchError={fetchError}
+      isLoading={isLoading}
     />
   );
 }

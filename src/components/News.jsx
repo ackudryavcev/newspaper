@@ -20,7 +20,13 @@ function News({ item }) {
 
   return (
     <div className="news-item">
-      <h3>{item.category[0]}</h3>
+      <h3>
+        {item.category.map((itemCategory, index) => (
+          <span className="news-category" key={index}>
+            {itemCategory}
+          </span>
+        ))}
+      </h3>
       {item.image === "None" ? (
         <></>
       ) : (
@@ -32,18 +38,19 @@ function News({ item }) {
             ? plusBlack
             : plusGray
         }
+        title="add to favorites"
         alt="plus"
         className="news-plus"
         onClick={() => {
           handleFavorite(item);
         }}
       />
-      <p>{item.published}</p>
-      <p>{item.author}</p>
-      <h4>{item.title}</h4>
-      <p>{item.description}</p>
-      <a href={item.url} target="_blank" rel="noreferrer">
-        More
+      <p className="news-published">{item.published.substring(0, 10)}</p>
+      <p className="news-author">{item.author}</p>
+      <h4 className="news-title">{item.title}</h4>
+      <p className="news-description">{item.description}</p>
+      <a href={item.url} target="_blank" rel="noreferrer" className="news-link">
+        More information
       </a>
     </div>
   );

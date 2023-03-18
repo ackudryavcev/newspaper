@@ -1,5 +1,6 @@
 .footer {
     background-color: black;
+    position: relative;
 }
 
 .footer-links {
@@ -20,5 +21,15 @@
     color: white;
     font-size: 1.8rem;
     margin: 0 0 0 15%;
-    padding-top: 2%;
+    padding-top: 4%;
+}
+
+.footer-link-up {
+    position: absolute;
+    color: white;
+    font-size: 3.2rem;
+    font-weight: 900;
+    text-decoration: none;
+    right: 3%;
+    top: 0;
 }
