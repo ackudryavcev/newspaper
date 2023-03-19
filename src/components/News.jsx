@@ -4,6 +4,16 @@ import { FavoriteContext } from "./FavoriteContext";
 import plusGray from "../assets/plus-square-gray.svg";
 import plusBlack from "../assets/plus-square-black.svg";
 import { Link } from "react-router-dom";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  WhatsappIcon,
+  WhatsappShareButton,
+} from "react-share";
 
 function News({ item }) {
   const { favorites, setFavorites } = useContext(FavoriteContext);
@@ -62,6 +72,20 @@ function News({ item }) {
       <a href={item.url} target="_blank" rel="noreferrer" className="news-link">
         More information
       </a>
+      <div className="news-share">
+        <FacebookShareButton url={item.url} title="Share news in Facebook">
+          <FacebookIcon round={true} size={30} />
+        </FacebookShareButton>
+        <TwitterShareButton url={item.url} title="Share news in Twitter">
+          <TwitterIcon round={true} size={30} />
+        </TwitterShareButton>
+        <TelegramShareButton url={item.url} title="Share news in Telegram">
+          <TelegramIcon round={true} size={30} />
+        </TelegramShareButton>
+        <WhatsappShareButton url={item.url} title="Share news in Whatsapp">
+          <WhatsappIcon round={true} size={30} />
+        </WhatsappShareButton>
+      </div>
     </div>
   );
 }

@@ -81,6 +81,14 @@
     box-shadow: 1px -1px black;
 }
 
+.news-share {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    display: flex;
+    gap: 3px;
+}
+
 @media (max-width: 1280px) {
     .news-item {
         width: 42%;
