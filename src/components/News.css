@@ -30,14 +30,16 @@
 }
 
 .news-category {
+    text-decoration: none;
     margin-right: 15px;
     font-size: 1.2rem;
     font-weight: 600;
     line-height: 1rem;
+    color: black;
 }
 
 .news-published {
-    margin-bottom: 5px;
+    margin: 5px 0;
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 0.9rem;

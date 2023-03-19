@@ -3,28 +3,38 @@ import "./News.css";
 import { FavoriteContext } from "./FavoriteContext";
 import plusGray from "../assets/plus-square-gray.svg";
 import plusBlack from "../assets/plus-square-black.svg";
+import { Link } from "react-router-dom";
 
 function News({ item }) {
   const { favorites, setFavorites } = useContext(FavoriteContext);
 
-  function handleFavorite(item) {
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleFavorite = (item) => {
     const tempFavorites = favorites.filter((favorite) => {
       return favorite.id !== item.id;
     });
     if (tempFavorites.length === favorites.length) {
-      setFavorites([...favorites, item]);
+      setFavorites([item, ...favorites]);
     } else {
       setFavorites(tempFavorites);
     }
-  }
+  };
 
   return (
     <div className="news-item">
       <h3>
         {item.category.map((itemCategory, index) => (
-          <span className="news-category" key={index}>
+          <Link
+            className="news-category"
+            key={index}
+            to={`/category?q=${itemCategory}`}
+            onClick={handleClick}
+          >
             {itemCategory}
-          </span>
+          </Link>
         ))}
       </h3>
       {item.image === "None" ? (
