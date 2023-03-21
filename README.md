@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Newspaper application. The application allows you to read the news
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Work version of project you can see here - [https://incomparable-llama-421177.netlify.app/](https://incomparable-llama-421177.netlify.app/).
 
-## Available Scripts
+## Application technologies
 
-In the project directory, you can run:
+The site presents a single page application created on React
 
-### `npm start`
+## `The following dependencies are used`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+"react"
+"react-router-dom"
+"react-share":
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Application Features
 
-### `npm test`
+### `main page`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+On the main page, you can view the latest news that is loaded from currentsapi.
 
-### `npm run build`
+By default, you see 30 latest news, but you can upload more news using button Load more news in the bottom of the site. The maximum limit is 200, this is how much api can be loaded.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Each news has a plus sign, you can add this news to your favorites.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+On the top you can see the main categories, on the bottom you can see all the categories. Each news has one or more categories. By clicking anywhere on a category, you will be able to select news from that category only.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The site header allows you to go to a page with selected news or use the search. In the search, you can use the keyword, start and end date of the search. Warning: API searches are very slow.
 
-### `npm run eject`
+Each news item has 4 social media buttons that you can use to share the news item with your friends, family or colleagues.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Each news has a link to the original news source
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `search page`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The search page is exactly the same as the main page, but here you see the search results. The maximum possible number of news in the search is 30, made to increase the speed of the search.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `favorite page`
 
-## Learn More
+The featured news page stores news in local storage, so each browser will have different favorite news.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The maximum number of displayed favorite news is 30 by default, by clicking on the Load more news button you can see more if you have more than 30
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `category page`
 
-### Code Splitting
+The categories page allows you to read the news of a specific category that you clicked on, you can see all the categories in the footer of the site.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The initial number of categories displayed is 30, but you can see more by clicking on the Load more news button. The maximum number is 200 this number allows the api
 
-### Analyzing the Bundle Size
+## Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Cypress was used for testing. Tests allow you to check the performance of the application and each specific page.
 
-### Making a Progressive Web App
+## Application structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application has 4 folders besides the root directory
 
-### Advanced Configuration
+In the assets folder you can see all the pictures necessary for the application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+In the components folder you will see the react components and the corresponding css files
 
-### Deployment
+In the hooks folder you can see all custom hooks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the page folder you can see the React components with the corresponding site pages and also the css files
