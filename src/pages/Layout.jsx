@@ -6,10 +6,13 @@ import Footer from "../components/Footer";
 
 function Layout() {
   const [inputValue, setInputValue] = useState("");
-  const [handleChange, handleKeyDown] = useSearch(setInputValue);
-  const handleButtonClick = () => {
-    handleKeyDown({ key: "Enter" }, inputValue);
-  };
+  const [dateStart, setDateStart] = useState("");
+  const [dateEnd, setDateEnd] = useState("");
+  const [handleChange, handleForm, handleDateChange] = useSearch(
+    setInputValue,
+    setDateStart,
+    setDateEnd
+  );
 
   return (
     <>
@@ -47,17 +50,36 @@ function Layout() {
             Favorite news
           </Link>
         </menu>
-        <input
-          placeholder=" news search"
-          className="main-search"
-          onKeyDown={(event) => handleKeyDown(event, inputValue)}
-          onChange={handleChange}
-          value={inputValue}
-        ></input>
-        <button
-          className="main-search-button"
-          onClick={handleButtonClick}
-        ></button>
+        <form
+          onSubmit={(event) =>
+            handleForm(event, inputValue, dateStart, dateEnd)
+          }
+          className="main-search-form"
+        >
+          <input
+            type="date"
+            id="date-start"
+            value={dateStart}
+            onChange={handleDateChange}
+            className="main-search-date"
+            title="start search date"
+          />
+          <input
+            type="date"
+            id="date-end"
+            value={dateEnd}
+            onChange={handleDateChange}
+            className="main-search-date"
+            title="end search date"
+          />
+          <input
+            placeholder=" news search"
+            className="main-search"
+            onChange={handleChange}
+            value={inputValue}
+          ></input>
+          <button className="main-search-button" type="submit"></button>
+        </form>
       </div>
       <Outlet />
       <Footer />

@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { FavoritesProvider } from "./components/FavoriteContext";
 import Layout from "./pages/Layout";
@@ -16,8 +15,6 @@ function App() {
           <Route path="search" element={<SearchPage />} />
           <Route path="category" element={<CategoryPage />} />
           <Route path="favorites" element={<Favorites />} />
-          {/*<Route path="product/:id" element={<ItemPage />} />
-        <Route path="*" element={<NotFoundPage />} /> */}
         </Route>
       </Routes>
     </FavoritesProvider>
