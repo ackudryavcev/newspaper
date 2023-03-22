@@ -4,6 +4,8 @@ import "./Layout.css";
 import useSearch from "../hooks/useSearch";
 import Footer from "../components/Footer";
 
+// This Layout for showing it anywhere. Header and Footer
+
 function Layout() {
   const [inputValue, setInputValue] = useState("");
   const [dateStart, setDateStart] = useState("");

@@ -2,6 +2,8 @@ import { useLocation } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import NewsBlock from "../components/NewsBlock";
 
+// page for showing page with search
+
 function SearchPage() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);

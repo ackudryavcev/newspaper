@@ -1,6 +1,8 @@
 import useFetch from "../hooks/useFetch";
 import NewsBlock from "../components/NewsBlock";
 
+// page for showing latest news. Main page
+
 function MainPage() {
   const [allNews, fetchError, isLoading] = useFetch("", "");
   return (

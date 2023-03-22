@@ -3,6 +3,8 @@ import useCategories from "../hooks/useCategories";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
+//Footer component. We load all possible categories with api and render them on the page
+
 function Footer() {
   const [categories] = useCategories();
 

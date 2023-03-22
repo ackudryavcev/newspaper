@@ -6,6 +6,8 @@ import SearchPage from "./pages/SearchPage";
 import CategoryPage from "./pages/CategoryPage";
 import Favorites from "./pages/Favorites";
 
+// our App page. We describe on it routing and connect context
+
 function App() {
   return (
     <FavoritesProvider>

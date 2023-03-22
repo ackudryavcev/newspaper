@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+// hook for fetching categories. work without key
+
 function useCategories() {
   const [categories, setCategories] = useState([]);
 

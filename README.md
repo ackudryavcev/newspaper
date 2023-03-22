@@ -10,7 +10,7 @@ The site presents a single page application created on React
 
 "react"
 "react-router-dom"
-"react-share":
+"react-share"
 
 ## Application Features
 
@@ -61,3 +61,5 @@ In the components folder you will see the react components and the corresponding
 In the hooks folder you can see all custom hooks
 
 In the page folder you can see the React components with the corresponding site pages and also the css files
+
+In the root directory, you can see the index.jsx file, in which we directly connect the code to the page, and the app.jsx file, which is the root for our application. In the app.jsx file, we also describe all our routes and connect the context

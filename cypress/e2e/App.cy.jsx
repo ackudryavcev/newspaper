@@ -31,6 +31,20 @@ describe("Check that we can fetch data from remote server", () => {
 
     cy.get(".footer-link").should("have.length", 46);
   });
+
+  it("should load more news on the page", () => {
+    cy.visit("/");
+
+    cy.contains("Load more news").click();
+
+    cy.get(".news-block-container").should("not.be.empty");
+
+    cy.get(".news-block-container").children().should("have.length", 39);
+
+    cy.contains("Load more news").click();
+
+    cy.get(".news-block-container").children().should("have.length", 48);
+  });
 });
 
 //Check that we can find news about USA
@@ -70,11 +84,11 @@ describe("Check category page", () => {
   it("Click on any category  and verifies result", () => {
     cy.visit("/");
 
-    cy.contains("energy").last().click();
+    cy.contains("celebrity").last().click();
 
     cy.wait(3000);
 
-    cy.get(".news-block-title").should("have.text", "Category energy");
+    cy.get(".news-block-title").should("have.text", "Category celebrity");
 
     cy.get(".news-block-container")
       .should("exist")

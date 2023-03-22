@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 
+//context component for storing favorite news, use local storage
+
 export const FavoriteContext = createContext();
 
 export const FavoritesProvider = ({ children }) => {
